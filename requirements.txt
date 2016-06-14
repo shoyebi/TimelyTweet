@@ -1,0 +1,7 @@
+Flask==0.10.1
+gunicorn==19.3.0
+gevent==1.0.1
+greenlet==0.4.6
+pyyaml=3.11
+oauth2
+logging

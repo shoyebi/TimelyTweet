@@ -1,0 +1,12 @@
+venv/
+*.pyc
+#*#
+*~
+test-reports/
+tests/.coverage
+build/
+*.tgz
+*.swp
+.DS_Store
+.idea/
+.settings/

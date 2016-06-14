@@ -1,0 +1,8 @@
+twitter_tokens:
+    consumer_key: Lccmq0NMhkg194XA0UWN82lS0
+    consumer_secret: aq6CM6b7f5iS9jqgSvSmrRr7JqvZJE4AKj6ml7Q5WlVlFxAnqJ
+    access_token: 2308593980-1DoaJqORwg8iKrDqV4BmuADIszlGODEJVHTl5q0
+    access_token_secret: WmrVMhP6NvVO2u71xcNnhrQOzxGpqc9eQnSxp2UupFTZN
+
+#api_rate_limit is 300 requests/15min
+no_of_followers_to_choose: 10
