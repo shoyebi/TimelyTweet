@@ -2,6 +2,17 @@ __author__ = 'shoyeb'
 
 import oauth2,json
 
+DAY_MAP = {
+    '6': 'SUNDAY',
+    '0': 'MONDAY',
+    '1': 'TUESDAY',
+    '2': 'WEDNESDAY',
+    '3': 'THURSDAY',
+    '4': 'FRIDAY',
+    '5': 'SATURDAY',
+    }
+
+
 def oauth_req(url, config, http_method="GET", post_body='', http_headers=None):
     twitter_tokens = config.get('twitter_tokens',{})
     CONSUMER_KEY = str(twitter_tokens.get('consumer_key','Lccmq0NMhkg194XA0UWN82lS0'))

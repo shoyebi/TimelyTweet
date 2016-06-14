@@ -29,4 +29,4 @@ Getting Started
     TimelyTweet/bin/bootstrap.py
 5. RUN
     python timetwitter/server.py
-    Application will start running on http://127.0.0.1:5000/
+    Application will start running on http://0.0.0.0:5000/

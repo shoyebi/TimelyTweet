@@ -17,6 +17,7 @@ class TweetTimeHandler(ServerHandler):
         self.hmap_time={}
         self.hmap_day={}
 
+
     def get_best_time_and_day(self, user_id=None, user_name=None):
         followers_ids = utils.get_followers(self.config, user_id,user_name)
         logging.debug("follower_ids : %s"%str( followers_ids))
@@ -41,8 +42,10 @@ class TweetTimeHandler(ServerHandler):
                 max_day=key
                 mav_value = value
         logging.debug("max_time : %s"% str(max_time))
-        logging.debug("max_day : %s"% str(max_day))
-        return max_time, max_day
+        max_day = str(max_day)
+        logging.debug("max_day : %s(%s)"% (utils.DAY_MAP.get(max_day),max_day))
+        max_time = str(max_time)+' hrs'
+        return max_time, utils.DAY_MAP.get(max_day)
 
     def extract_time_into_dict(self, status_updates):
         if(not status_updates):
@@ -52,7 +55,11 @@ class TweetTimeHandler(ServerHandler):
         except Exception as e:
             logging.error("caught exception "+str(e))
         for i in aj:
-            if(i.get('created_at') is None):
+            try:
+                if(i.get('created_at') is None):
+                    continue
+            except AttributeError as aerr:
+                logging.error('AttributeError : ' + str(i))
                 continue
             created_at = str(i.get('created_at'))
             created_at = created_at[:19] + created_at[25:]
