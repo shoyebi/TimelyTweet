@@ -33,4 +33,4 @@ if __name__ == "__main__":
     sys.path.append(path.dirname(path.dirname(path.abspath(__file__))))
     logging=Logger.getLogger()
     app.config_obj = ConfigManager.get_instance()
-    app.run()
+    app.run(host='0.0.0.0', port=5000)
